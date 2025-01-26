@@ -2,7 +2,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f2f5; /* Light gray background */
+  background-color: #f0f2f5; 
   color: #333;
   height: 100vh;
   display: flex;
@@ -55,14 +55,14 @@ nav h3 {
 }
 
 .message.left {
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff; 
   align-self: flex-start;
   border: 1px solid #ddd;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .message.right {
-  background-color: #dcf8c6; /* Light green */
+  background-color: #dcf8c6; 
   align-self: flex-end;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }

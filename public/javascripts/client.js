@@ -4,7 +4,6 @@ const form = document.getElementById('send-container');
 const messageInput = document.getElementById('messageInp');
 const messageContainer = document.querySelector('.container');
 
-// Append message to the chat container
 const append = (message, position) => {
   const messageElement = document.createElement('div');
   messageElement.innerText = message;
@@ -19,7 +18,7 @@ const append = (message, position) => {
 
 const username = prompt('Enter your name');
 if (username) {
-  socket.emit('new-user-joined', username); // Notify server about the new user
+  socket.emit('new-user-joined', username); 
 }
 
 socket.on('user-joined', (name) => {
@@ -29,9 +28,9 @@ socket.on('user-joined', (name) => {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const message = messageInput.value;
-  append(`You: ${message}`, 'right'); // Append message locally
-  socket.emit('send', message); // Send message to server
-  messageInput.value = ''; // Clear input
+  append(`You: ${message}`, 'right'); 
+  socket.emit('send', message); 
+  messageInput.value = ''; 
 });
 
 socket.on('receive', (data) => {

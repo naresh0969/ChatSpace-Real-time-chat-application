@@ -35,19 +35,18 @@ io.on('connection', (socket) => {
   // Handle message sending
   socket.on('send', (message) => {
     const username = users[socket.id];
-    socket.broadcast.emit('receive', { username, message }); // Broadcast to other users
+    socket.broadcast.emit('receive', { username, message }); 
   });
 
-  // Handle user disconnect
+
   socket.on('disconnect', () => {
     const username = users[socket.id];
     socket.broadcast.emit('left',username);
-    delete users[socket.id]; // Remove user from list
+    delete users[socket.id]; 
     console.log(`${username} disconnected`);
   });
 });
 
-// Start WebSocket server on port 9000
 server.listen(9000, () => {
   console.log('WebSocket server running on http://localhost:9000');
 });
